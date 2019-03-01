@@ -33,7 +33,7 @@ function App(props) {
         let arrJsx = [];
         console.log(props);
         for (let idx = 0; idx < props.cantidad; idx++) {
-            arrJsx.push(<BotonConEstado estadoInicial={1000}></BotonConEstado>);
+            arrJsx.push(<div style={{background:"#"+(idx*2)+(idx*2)+(idx)}}><fieldset><legend>{idx}</legend><BotonConEstado estadoInicial={1000}></BotonConEstado></fieldset></div>);
         }
         return arrJsx;
     }
