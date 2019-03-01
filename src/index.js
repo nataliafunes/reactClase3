@@ -4,6 +4,6 @@ import App from './App';
 import AppRutas from './AppRutas';
 
 ReactDom.render(
-    <App nombreCurso={'React'} descripcion={'que tal!!!'}></App>,
+    <AppRutas nombreCurso={'React'} descripcion={'que tal!!!'}></AppRutas>,
     document.getElementById('root')
 );
