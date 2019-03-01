@@ -1,4 +1,4 @@
-export default function() {
+export default function () {
     alert('Soy el default del modulo B');
 }
 export function nombre() {

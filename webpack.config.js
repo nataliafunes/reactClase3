@@ -7,16 +7,17 @@ module.exports = {
   mode: 'development',
   devServer: {
     publicPath: '/dst/',
-    port: 80
+    port: 80,
+    historyApiFallback: true //para que no vaya al http server a buscar la ruta
   },
   module: {
-     rules: [
-       {
-          test: /\.(js)$/,
-          exclude: /node_modules/,
-          use: ['babel-loader']
-       } 
-     ]
+    rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      }
+    ]
   },
   output: {
     path: path.resolve(__dirname, 'dst'),

@@ -4,14 +4,14 @@ class ComponenteInput extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            valorInput : 'valor incial'
+            valorInput: 'valor incial'
         }
         this.cambioValor = this.cambioValor.bind(this);
     }
 
     cambioValor(e) {
         this.setState({
-            valorInput : e.target.value
+            valorInput: e.target.value
         });
     }
 
@@ -21,9 +21,9 @@ class ComponenteInput extends React.Component {
                 <input type="text" onChange={this.cambioValor} value={this.state.valorInput} />
                 <br />
                 <br />
-                <input type="button" 
-                onClick={() => this.props.onReport(this.state.valorInput)} 
-                value="REPORTAR" />
+                <input type="button"
+                    onClick={() => this.props.onReport(this.state.valorInput)}
+                    value="REPORTAR" />
             </div>
         )
     }

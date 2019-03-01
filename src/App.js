@@ -5,6 +5,22 @@ import ComponenteInput from './ComponenteInput';
 import Experimento from './Experimento';
 import { inflate } from 'zlib';
 import Practica from './Practica';
+import MuchasProperties from './MuchasProperties';
+import ComponenteAsync from './ComponenteAsync';
+
+
+let datosPersonas = [
+    { "apellido": 'Perez', "nombres": "Juan" },
+    { "apellido": 'Cafferata', "nombres": "Jose" },
+    { "apellido": 'Funes', "nombres": "Natalia" }
+];
+
+let objParam = {
+    uno: "uno",
+    dos: "dos",
+    tres: "tres",
+    cuatro: "cuatro"
+};
 
 // stateless component
 function App(props) {
@@ -13,11 +29,11 @@ function App(props) {
         alert(param);
     }
 
-    function CrearComponenteBotonConEstado(props){
+    function CrearComponenteBotonConEstado(props) {
         let arrJsx = [];
-        console.log(props);     
-        for(let idx=0; idx<props.cantidad; idx++){
-            arrJsx.push(<BotonConEstado estadoInicial={1000}></BotonConEstado>);    
+        console.log(props);
+        for (let idx = 0; idx < props.cantidad; idx++) {
+            arrJsx.push(<BotonConEstado estadoInicial={1000}></BotonConEstado>);
         }
         return arrJsx;
     }
@@ -26,12 +42,13 @@ function App(props) {
         <div>
             <h1>Bienvenidos al curso de {props.nombreCurso} :: Clase 3</h1>
             <hr />
-            <CrearComponenteBotonConEstado cantidad={10}></CrearComponenteBotonConEstado> 
-            <Practica datosPersonas={[
-                {"apellido":'Perez', "nombres":"Juan"},
-                {"apellido":'Cafferata', "nombres":"Jose"},
-                {"apellido":'Funes', "nombres":"Natalia"}
-            ]}></Practica>
+            <CrearComponenteBotonConEstado cantidad={10}></CrearComponenteBotonConEstado>
+            <hr />
+            <Practica datosPersonas={datosPersonas}></Practica>
+            <hr />
+            <MuchasProperties {...objParam}></MuchasProperties>
+            <hr />
+            <ComponenteAsync ></ComponenteAsync>
         </div>
     );
 }
